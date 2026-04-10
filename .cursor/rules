@@ -1,0 +1,33 @@
+1. All source code lives in phase2/StreamList/src/
+2. Screens live in src/screens/
+3. Shared components live in src/components/common/
+4. Screen-specific components live in src/components/[screen-name]/
+5. All custom hooks live in src/hooks/
+6. All API functions live in src/api/movies.ts
+7. Navigation param types live in src/navigation/types.ts
+8. All API calls must go through src/api/client.ts only. Never import axios directly in hooks, screens or components.
+9. All API endpoint functions live in src/api/movies.ts only. Never call TMDB endpoints directly from hooks or components.
+10. The TMDB access token must never appear in any file other than .env
+11. Every screen fetches data exclusively through a custom hook. No inline useEffect + fetch inside screen components.
+12. Every custom hook must return this exact shape: { data, loading, error, refetch }. No deviations from this interface.
+13. All color values must come from src/theme/colors.ts. No hardcoded hex values anywhere in component or screen files.
+14. All spacing values must come from src/theme/spacing.ts. No hardcoded pixel values in StyleSheet.
+15. All typography styles must come from src/theme/typography.ts. No hardcoded fontSize or fontFamily values in components.
+16. Never use pure white (#FFFFFF) for any text — use colors.on_surface.
+17. Never use a solid 1px border to define sections or containers. All boundaries are created through background color shifts or spacing alone. This is a hard rule with no exceptions.
+18. All styles must use StyleSheet.create only. No inline style props anywhere — style={{ }} is not allowed.
+19. No third party UI libraries — no React Native Paper, Elements, or any pre-built component library.
+20. No NativeWind, Styled Components or any CSS-in-JS library.
+21. Strict TypeScript throughout — no any types permitted.
+22. All TMDB API response shapes must have interfaces in src/api/types.ts.
+23. All navigation params must be typed in src/navigation/types.ts. No untyped navigation.navigate() calls anywhere.
+24. Do not install any new npm package without explicitly asking first.
+25. Do not modify the navigation structure without explicitly asking first.
+26. Do not modify files outside the current task scope.
+27. Watchlist state must only be accessed through src/store/watchlistStore.ts. No local watchlist state in screens or components.
+28. Only Zustand is permitted for global state. No Redux, MobX or any other state library.
+29. Use colors.surface_bright for all pressed and active states on dark cards.
+30. The hero card on Home screen occupies significantly more width than regular cards — asymmetry is intentional, do not make all cards equal width.
+31. Use spacing tokens from src/theme/spacing.ts to signal section boundaries. Never use borders or dividers between sections.
+32. Use colors.on_surface_variant for all secondary metadata text such as year, genre, rating and subtitles.
+33. Never use dividers or separators between list items or carousel items.
